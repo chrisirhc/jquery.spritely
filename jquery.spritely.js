@@ -29,6 +29,7 @@
 			var el = $(options.el);
 			var el_id = el.attr('id');
 			options = $.extend(options, $._spritely.instances[el_id] || {});
+			if (options.do_once && !options.play_frames) options.play_frames = options.no_of_frames;
 			if (options.play_frames && !$._spritely.instances[el_id]['remaining_frames']) {
 				$._spritely.instances[el_id]['remaining_frames'] = options.play_frames + 1;
 			}
